@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="container" id="snowflakeContainer">
+        <h1 itemprop="name" class="p-name">Blog<span>Spot</span></h1>
+        <input type="text" id="searchBox" placeholder="Search blogs by title..." onkeyup="filterCards()">
+        <div class="row mt-4" id="cardList">
+            <div class="drinks__tags tag-selection">
+                <p class="drinks__tag drinks__tag--grey">All</p>
+                <p class="drinks__tag drinks__tag--blue tag-inactive">Technology</p>
+                <p class="drinks__tag drinks__tag--green tag-inactive">Business</p>
+                <p class="drinks__tag drinks__tag--red tag-inactive">Gaming</p>
+                <p class="drinks__tag drinks__tag--pink tag-inactive">Health</p>
+                <p class="drinks__tag drinks__tag--yellow tag-inactive">Phone</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Technology Phone">
+                    <img src="https://www.gizmochina.com/wp-content/uploads/2024/10/Redmi-Note-14-Featured-1024x683.jpg" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Redmi Note 14</h5>
+                        <p class="card-text">Redmi Note 14 series to launch in India today.</p>
+                        <p class="card-date"><small>Published on: <span>2024-12-07</span></small></p>  
+                        <div class="mt-2">
+                            <span class="badge bg-primary">Technology</span>
+                            <span class="badge bg-secondary">Phone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Technology Phone Google">
+                    <img src="http://3.bp.blogspot.com/-7-KmADvPxkY/UgitVrQvgiI/AAAAAAAAASo/lgZiaL6RfnY/s1600/Android+OS+for+Smartphone+Download+Free.jpg" class="card-img-top" alt="Blog Post 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Android OS</h5>
+                        <p class="card-text">Pixel 6, Pixel 7 now have longer software support for Android OS</p>
+                        <p class="card-date"><small>Published on: <span>Today</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-primary">Technology</span>
+                            <span class="badge bg-secondary">Phone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Technology Phone">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.sB2YMHcFH6mK6K2i0VlXcQHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Blog Post 3">
+                    <div class="card-body">
+                        <h5 class="card-title">One Plus Phones</h5>
+                        <p class="card-text">OnePlus Ace 5 aka OnePlus 13R first look officially teased</p>
+                        <p class="card-date"><small>Published on: <span>2024-11-17</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-primary">Technology</span>
+                            <span class="badge bg-secondary">Phone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Business AI">
+                    <img src="https://www.thetechoutlook.com/wp-content/uploads/2023/05/Airtel.jpg" class="card-img-top" alt="Blog Post 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Airtel on AI</h5>
+                        <p class="card-text">AI-powered solution helped block 8 bn spam calls, 0.8 bn SMSes: Airtel</p>
+                        <p class="card-date"><small>Published on: <span>2024-10-11</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-warning">Business</span>
+                            <span class="badge bg-info">AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Business Automobile">
+                    <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/03/kia-1584964581.jpg" class="card-img-top" alt="Blog Post 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Kia Motors India</h5>
+                        <p class="card-text">Kia India to hike vehicle prices by up to 2% from January: Reports</p>
+                        <p class="card-date"><small>Published on: <span>2024-10-09</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-warning">Business</span>
+                            <span class="badge bg-success">Automobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Business Automobile">
+                    <img src="https://www.prokerala.com/news/photos/imgs/1200/tata-motors-to-buy-marcopolo-s-stakes-in-bus-coach-jv-for-rs-99-96-cr-1119787.jpg" class="card-img-top" alt="Blog Post 6">
+                    <div class="card-body">
+                        <h5 class="card-title">TATA Automobile</h5>
+                        <p class="card-text">Tata Motors, Maruti, M&M & RIL: Here's what Vaishali Parekh of PL says on these 4 stocks</p>
+                        <p class="card-date"><small>Published on: <span>2024-10-21</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-warning">Business</span>
+                            <span class="badge bg-success">Automobile</span>
+                            <span class="badge bg-dark">Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Gaming Entertainment">
+                    <img src="https://i.redd.it/5b1y5a3vj3n21.jpg" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Fortnite Game</h5>
+                        <p class="card-text">Fortnite Finally Getting Official First-Person Mode, But It's Not Battle Royale.</p>
+                        <p class="card-date"><small>Published on: <span>2024-10-21</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-danger">Gaming</span>
+                            <span class="badge bg-secondary">Entertainment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Disney Entertainment Gaming">
+                    <img src="https://www.hdwallpapers.in/thumbs/2011/disney_mickey_mouse-t2.jpg" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Disney Mickey Mouse</h5>
+                        <p class="card-text">Disney Gift Idea: Sorcerer Mickey Lego Diorama Gets First Big Discount</p>
+                        <p class="card-date"><small>Published on: <span>2024-12-08</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-danger">Gaming</span>
+                            <span class="badge bg-primary">Disney</span>
+                            <span class="badge bg-secondary">Entertainment</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Movies Entertainment">
+                    <img src="https://cdn.mos.cms.futurecdn.net/yrVrn9sdBK6xy7w5aymdaC-1200-80.jpg" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Marvel Movies</h5>
+                        <p class="card-text">Preorder Venom 3-Movie 4K Collection With Bonus Action Figure For Only $52</p>
+                        <p class="card-date"><small>Published on: <span>Today</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-danger">Gaming</span>
+                            <span class="badge bg-warning">Movies</span>
+                            <span class="badge bg-secondary">Entertainment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Festival Health Sugar">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.sbadyXHzTMaacMK8vsV5nwHaE1&pid=Api&P=0&h=180" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Christmas Thanksgiving</h5>
+                        <p class="card-text">Homemade Cranberry Sauce Is the Healthier Option for Thanksgiving.</p>
+                        <p class="card-date"><small>Published on: <span>2024-12-17</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-primary">Festival</span>
+                            <span class="badge bg-dark">Health</span>
+                            <span class="badge bg-info">Sugar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Health Sugar">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.0w036TDmuCC4KBAhw7N2PAHaE7&pid=Api&P=0&h=180" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Sweet Treats Concerns</h5>
+                        <p class="card-text">Sweet Treats, Bitter Truth: Crumbl's Shocking Sugar Content</p>
+                        <p class="card-date"><small>Published on: <span>2024-09-27</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-dark">Health</span>
+                            <span class="badge bg-info">Sugar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" data-tags="Health Disease">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.cHYGq-oFiED_9zxUgALF7gHaES&pid=Api&P=0&h=180" class="card-img-top" alt="Blog Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Disease in Reality</h5>
+                        <p class="card-text">Some of these Common Diseases Aren't Real, Expert Says</p>
+                        <p class="card-date"><small>Published on: <span>2024-12-07</span></small></p> 
+                        <div class="mt-2">
+                            <span class="badge bg-dark">Health</span>
+                            <span class="badge bg-success">Disease</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="footer-left" itemscope itemtype="http://schema.org/Organization" class="h-card">
+            <h3 itemprop="name" class="p-name">Blog<span>Spot</span></h3>
+            <nav aria-label="Footer Navigation">
+                <p class="footer-links">
+                    <a href="#" class="link-1" itemprop="url">Home</a>
+                    <a href="#" itemprop="url">Blog</a>
+                    <a href="#" itemprop="url">Events</a>
+                    <a href="#" itemprop="url">News</a>
+                    <a href="#" itemprop="url">Gallery</a>
+                </p>
+            </nav>
+            <p class="footer-name">Satyam Gupta © 2024</p>
+        </div>
+    
+        <div class="footer-center">
+            <div itemscope itemtype="http://schema.org/PostalAddress" class="p-address">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <p>
+                    <span itemprop="streetAddress" class="p-street-address">Gomati Nagar, Lucknow, Uttar Pradesh India</span>
+                </p>
+            </div>
+            <div>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p itemprop="telephone" class="p-tel">+91 546543534(not real)</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <p><a href="mailto:satgup6902@mail.com" itemprop="email" class="u-email">satgup6902@mail.com</a></p>
+            </div>
+        </div>
+    
+        <div class="footer-right">
+            <p class="footer-about">
+                <span>About this site</span>
+                This is blogging website. Here you can check daily news and updates about everything around you.
+            </p>
+            <div class="footer-socials">
+                <a href="#" rel="me" aria-label="Facebook" itemprop="sameAs" class="u-url"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" rel="me" aria-label="Twitter" itemprop="sameAs" class="u-url"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" rel="me" aria-label="LinkedIn" itemprop="sameAs" class="u-url"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" rel="me" aria-label="GitHub" itemprop="sameAs" class="u-url"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

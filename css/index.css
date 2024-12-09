@@ -1,0 +1,384 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #010101;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 60%;
+    /* Default width for desktop */
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* Optional: Add some styles for focus */
+#searchBox:focus {
+    border: none;
+    /* Ensure no border on focus */
+    outline: none;
+    /* Ensure no outline on focus */
+    border-color: azure;
+}
+
+/* For tablets */
+@media (max-width: 992px) {
+    .container {
+        width: 80%;
+        /* Width for tablets */
+    }
+
+    .card {
+        margin-bottom: 20px;
+        cursor: pointer;
+        height: auto;
+        /* Allow height to adjust based on content */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+    .container {
+        width: 96%;
+        /* Width for mobile */
+    }
+
+    .card {
+        margin-bottom: 20px;
+        cursor: pointer;
+        height: auto;
+        /* Allow height to adjust based on content */
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"],
+select {
+    width: 80%;
+    padding: 10px;
+    margin: 0 0 10px 10%;
+    /* Center the input fields */
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    border-color: azure;
+    box-shadow: none;
+    /* Remove any box shadow if present */
+    background-color: transparent;
+    /* Make the background transparent */
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.drinks__tag {
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 11px;
+    opacity: 0.6;
+    background-color: rgb(219, 214, 214);
+}
+
+.highlight {
+    background-color: yellow;
+    /* Highlight color */
+    color: black;
+    /* Change text color if needed */
+}
+
+.card {
+    display: none;
+    /* Initially hide cards */
+    margin-bottom: 20px;
+    cursor: pointer;
+    height: auto;
+    /* Allow height to adjust based on content */
+}
+
+.card.show {
+    display: block;
+    /* Show the card when it has the 'show' class */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Distribute space evenly */
+}
+
+.card-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.card-title:hover {
+    text-decoration: underline;
+}
+
+
+
+.card-img-top {
+    width: 100%;
+    /* Make the image take the full width of the card */
+    height: 200px;
+    /* Set a fixed height for the image */
+    object-fit: cover;
+    /* Ensure the image covers the area without distortion */
+    border-radius: 5px;
+    /* Optional: round the corners of the image */
+}
+
+
+
+.footer {
+    background: #0d1117;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    color: #fff !important;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer .footer-left {
+    width: 40%;
+}
+
+
+.footer h3 {
+    color: #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+}
+
+.footer h3 span {
+    color: teal;
+}
+
+/* Footer links */
+
+.footer .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer .footer-name {
+    color: teal;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+
+.footer .footer-center {
+    width: 35%;
+}
+
+.footer .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 400;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer .footer-center p a {
+    color: teal;
+    text-decoration: none;
+    ;
+}
+
+.footer .footer-links a:before {
+    content: "|";
+    font-weight: 300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.footer .footer-links .link-1:before {
+    content: none;
+}
+
+/* Footer Right */
+
+.footer .footer-right {
+    width: 20%;
+}
+
+.footer .footer-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer .footer-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer .footer-socials {
+    margin-top: 25px;
+}
+
+.footer .footer-socials a {
+    display: inline-block;
+    font-size: 35px;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.footer .logo {
+    max-width: 100px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 800px) {
+
+    .footer {
+        font: bold 14px sans-serif;
+    }
+
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer .footer-center i {
+        margin-left: 0;
+    }
+
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: white;
+    /* Snowflake color */
+    font-size: 1.5em;
+    /* Size of the snowflakes */
+    pointer-events: none;
+    /* Prevent interaction */
+    animation: fall linear infinite;
+    /* Animation for falling effect */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        /* Start position */
+    }
+
+    100% {
+        transform: translateY(100vh);
+        /* End position */
+    }
+}
+
+.p-name {
+    font-size: 4em;
+    /* Large font size */
+    color: #00ff00;
+    /* Neon green color */
+    text-shadow:
+        0 0 5px #00ff00,
+        /* Neon green glow */
+        0 0 10px #00ff00,
+        /* Neon green glow */
+        0 0 20px #00cc00;
+    /* Slightly darker green */
+}
+
+.p-name span {
+    color: #ff00ff;
+    /* Neon pink color for the span */
+    text-shadow:
+        0 0 5px #ff00ff,
+        /* Neon pink glow */
+        0 0 10px #ff00ff;
+    /* Neon pink glow */
+}
